@@ -1,0 +1,20 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>XSeed - Estágio</title>
+</head>
+<body>
+	<form action="menu">
+	<div class="container">
+		<label for="usuario"><b>Usuario</b></label>
+			<input type="text" placeholder="Login" name="login" required>
+		<label for="senha"><b>Senha></b></label>
+			<input type="text" placehoder="Senha" name="senha" required>
+		<button type="submit">Entrar</button>	
+	</div>	
+</form>
+</body>
+</html>
