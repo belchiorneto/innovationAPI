@@ -1,0 +1,43 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@page import="telaLogin.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>List</title>
+</head>
+<body>
+<table>
+	<tr>
+		<th>Nome</th>
+		<th>Endereço</th>
+	<!-- 	<th>Crédito</th>
+		<th>Validade</th> -->
+	</tr>
+	<tr>
+		<td>
+		<% //String rs = ClienteDao.getInstancia().pesquisar();
+			Login login = new Login();
+			login.login(login, password);
+			
+		%>
+		</td>
+	</tr>	
+</table>
+<%	
+	while(rs.next()){ 
+%>
+<tr>
+ <!-- Table iterating through database itens -->
+<td><%=resultSet.getString("login") %></td>
+<td><%=resultSet.getString("password") %></td>
+
+
+</tr>
+
+<% 
+}
+%>
+</body>
+</html>

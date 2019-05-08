@@ -1,0 +1,23 @@
+package telaLogin;
+
+import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
+
+public class Login {
+
+	public Cliente login(String login, String password) throws SQLException {
+		Cliente clienteRetorno = ClienteDao.getInstancia().pesquisar(clienteToMap(login, password));
+		
+		return clienteRetorno;
+	}
+	
+	private Map<String, Object> clienteToMap(String login, String password) {
+		Map<String, Object> mapReturn = new HashMap<String, Object>();
+		
+		mapReturn.put("login", login);
+		mapReturn.put("password", password);
+		
+		return mapReturn;
+	}
+}

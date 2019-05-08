@@ -1,0 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<%@page import="telaLogin.*" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>List</title>
+</head>
+<body>
+<table>
+	<tr>
+		<th>Nome</th>
+		<th>Endereço</th>
+		<th>Crédito</th>
+		<th>Validade</th>
+	</tr>
+	<tr>
+		<td>
+		<% //Receber dados e depois iterar sobre o rs
+		//while(rs.next()){};
+		%>
+		</td>
+	</tr>	
+</table>
+	
+	<a href = "http://localhost:8080/TelaLogin/Main.jsp">Back</a>
+
+</body>
+</html>

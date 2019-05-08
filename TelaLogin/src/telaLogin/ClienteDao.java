@@ -1,0 +1,54 @@
+package telaLogin;
+
+import java.util.Map;
+import java.sql.*;
+
+public class ClienteDao {
+
+	private static ClienteDao instancia;
+
+	private Cliente connect(Map<String, Object> cliente) throws SQLException {
+		ResultSet results = null;
+		Cliente clienteRetorno = new Cliente();
+		Connection conn = null; 
+		String sql = "select * from user";
+		try {
+			// Step 1: "Load" the JDBC driver
+			Class.forName("org.h2.Driver");
+
+			conn = DriverManager.getConnection ("jdbc:h2:~/test", "sa","");
+			Statement st = conn.createStatement();
+			results = st.executeQuery(sql);
+			clienteRetorno = resultSetToCliente(results);
+			System.out.println(clienteRetorno.getLogin());
+		} catch (Exception e) {
+			System.err.println(e.getMessage());
+		}
+		return clienteRetorno;
+	}
+
+	private ClienteDao() {
+	}
+
+	public static ClienteDao getInstancia() {
+		if (instancia == null)
+			instancia = new ClienteDao();
+		return instancia;
+	}
+
+	public Cliente pesquisar(Map<String, Object> cliente) throws SQLException {
+		Cliente clienteRetorno =  connect(cliente);
+		return clienteRetorno;
+	}
+	
+	private Cliente resultSetToCliente(ResultSet results) throws SQLException{
+		Cliente cliente = new Cliente();
+		while(results.next()) {
+			cliente.setLogin(results.getString("name"));
+			cliente.setPassword(results.getString("id"));
+		}
+		
+		return cliente;
+	}
+
+}

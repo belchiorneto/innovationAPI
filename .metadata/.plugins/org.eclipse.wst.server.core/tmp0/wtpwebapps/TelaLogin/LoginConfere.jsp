@@ -9,7 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<% String login=request.getParameter("login");
+	<% 
+	String login=request.getParameter("login");
 	String password=request.getParameter("password"); 
 		if (login.equals("xseed") && password.equals("estagio")) 
 		{ 
